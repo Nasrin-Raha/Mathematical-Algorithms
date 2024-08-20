@@ -1,0 +1,23 @@
+#Mathmatical Algorithm:
+
+# Divisble by 3 or not?
+
+def divisibleByThree(number):
+    sum_of_digits = 0
+    while number > 0:
+        remainder = number % 10
+        sum_of_digits += remainder
+        number //= 10
+    
+    # If sum_of_digits is a single digit, check if it's divisible by 3
+    if sum_of_digits < 10:
+        return sum_of_digits % 3 == 0
+    else:
+        # If the sum is still more than one digit, recurse
+        return divisibleByThree(sum_of_digits)
+
+number = 1332
+if divisibleByThree(number):
+    print("Yes")
+else:
+    print("No")
