@@ -1,0 +1,25 @@
+#Mathmatical Algorithm:
+
+#Check if a large number is divisible by 6 or not
+
+# we use two conditions: The number must be divisible by 2.
+# The number must be divisible by 3.
+#Divisibility by 2: A number is divisible by 2 if its last digit is even (i.e., 0, 2, 4, 6, or 8).
+#Divisibility by 3: A number is divisible by 3 if the sum of its digits is divisible by 3.
+
+
+def divisibleBySix(number):
+    divisible_by_2 = number % 2 == 0 # check if divisible by 2 
+    
+    sum_of_digits = sum(int(digit) for digit in str(number)) # check if divisible by 3
+    divisible_by_3 = sum_of_digits % 3 == 0
+    
+    return divisible_by_2 and divisible_by_3
+
+    
+
+number = 132
+if divisibleBySix(number):
+    print("Yes")
+else:
+    print("No")
