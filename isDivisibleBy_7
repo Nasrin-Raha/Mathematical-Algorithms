@@ -1,0 +1,28 @@
+# check if a number is divisible by 7
+
+# we need to follow the below steaps:
+# 1: identify the the last digit
+# 2: double the last digit like 2*12
+# 3: remove the last digit from the number like 616 % 10 = 61
+# 4:subtract the double last digit from the remainder like 61 - 12 = 49 
+# 5: check if 49 is divisible by 7 then yes
+# 6 if the numbers greater then follow the above rule for the next steaps
+
+
+def isDivisibleBy_7(number):
+    while number > 9:
+        last_digit = number % 10 # identify the last digit
+        number = number // 10   # remove the last digit
+        number -= 2 * last_digit # subtract twice the last digit from the remaining number
+        
+        # Check if the final number is divisible by 7
+    return number == 0 or number % 7 == 0
+    
+    
+#Test unicode
+number = 616
+if isDivisibleBy_7(number):
+    print(f"Yes, {number} is divisible by 7.")
+else:
+    print(f"No, {number} is not divisible by 7.")
+
