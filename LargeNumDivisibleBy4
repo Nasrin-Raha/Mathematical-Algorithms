@@ -1,0 +1,13 @@
+#Mathmatical Algorithm:
+
+# Check if a large number is divisible by 4 or not
+# for example 1234567589333862 or 100 , 1000, 10000 so we only check the last two digits of the number if divisible by 4
+def divisibleByFour(number):
+    last_twoDigits = number % 100 
+    return last_twoDigits % 4 == 0
+
+number = 10000
+if divisibleByFour(number):
+    print("Yes")
+else:
+    print("No")
