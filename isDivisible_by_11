@@ -1,0 +1,47 @@
+# is divisible by 11
+# follow the below steps
+
+# 1: calculate sum of digits in odd positions
+# 2: calculate sum of digits in even positions
+# 3: find the absolute difference between sum of odd and even positions
+# 4: check if the difference is divisible by 11
+
+def isDivisibleby_11(number):
+      # Convert the number to a string to iterate over each digit
+
+    number_str = str(number)
+    
+    
+    # Initialize sums 
+    even_sum = 0
+    odd_sum = 0
+    
+    
+    for i, digits in enumerate(number_str):
+        
+        if i % 2 == 0:
+            odd_sum += int(digits) # Index is even (0-based), which is an odd position (1-based)
+
+            # Index is odd (0-based), which is an even position (1-based)
+
+        else:
+            even_sum += int(digits)
+            
+                # Calculate the difference between the two sums
+    difference = abs(odd_sum - even_sum)
+    
+        # Check if the difference is divisible by 11
+
+    
+    return difference % 11 == 0
+    
+    
+# test code 
+number = 2728
+if isDivisibleby_11(number):
+    print(f"Yes, {number} is divisble by 11.")
+else:
+    print(f"No, {number} is not divisible by 11.")
+    
+    
+    
