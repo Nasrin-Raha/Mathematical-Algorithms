@@ -1,0 +1,19 @@
+# is divisible by 9
+# follow the below steps
+# 1: calculate sum of the digits
+# 2: check if sum is divisible by 9
+
+
+def isDivisibleBy_9(number):
+    sum_digit = sum(int(digit) for digit in str(number))
+
+    
+    return sum_digit % 9 == 0
+    
+    
+number = 69354
+if isDivisibleBy_9(number):
+    print("Divisible")
+else:
+    print("Not Devisible")
+    
