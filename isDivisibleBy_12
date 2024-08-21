@@ -1,0 +1,42 @@
+#divisible by 12
+
+# follow below two steps
+# 1: check divisibility by 3 == calculate sum of all digits
+# 2: check divisibility by 4 == extract the last two digits of the number check if that divisible by 4
+
+
+def divisibleBy_12(number):
+    
+    # convert int to string for easy manipulation
+    number_str = str(number)
+    
+    
+    #check divisibility by 3
+    digit_sum = sum(int(digit) for digit in number_str)
+    divisibleBy_3 = digit_sum % 3 == 0
+
+    
+    #check divisibleBy_4
+    # Extract the last two digits
+    if len(number_str) > 1:
+        last_two_digit = int(number_str[-2:])
+    else:
+        last_two_digit = int(number_str)
+        
+    divisibleBy_4 = last_two_digit % 4 == 0
+        
+        
+    return divisibleBy_3 and divisibleBy_4
+
+        
+    
+    
+number = 123456
+if divisibleBy_12(number):
+    print(f"Yes the {number} is divisible")
+else:
+    print(f"No the {number} is not divisible")
+    
+    
+
+
