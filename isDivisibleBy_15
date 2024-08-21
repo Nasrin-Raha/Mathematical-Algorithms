@@ -1,0 +1,32 @@
+# is divisible by 15
+# follow two rules
+# 1: check divisibility by 3 = sum of digits is divisible by 3
+# 2: check divisibility by 5 = a number is divisible by 5 if the last digit is 0 or 5
+
+
+def isDivisibleBy_15(number):
+    number_str = str(number)
+    
+    digit_sum = sum(int(digit) for digit in number_str)
+    divisible_by_3 = digit_sum % 3 == 0
+    
+    
+    #check by isDivisibleBy_5
+    
+    last_digit = int(number_str[-1])
+    divisible_by_5 = last_digit in [0, 5]
+    
+    return divisible_by_3 and divisible_by_5
+
+
+numbers_to_test = [15, 30, 45, 60, 75, 90, 105, 123456, 999, 1005, 12345]
+for number in numbers_to_test:
+    if isDivisibleBy_15(number):
+        print(f"Yes, {number} is divisible by 15.")
+    else:
+        print(f"No, {number} is not divisible by 15.")
+        
+        
+
+    
+    
